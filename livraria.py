@@ -1,34 +1,34 @@
 #Avaliação1
 
-def addLivro(dicLivros):
+def addLivro(dicLivros): #declara a função que adiciona livros no estoque, ou incrementa a quantidade existente
         print("=== Adicionar livro ===")
  
         titulo = input("\n Título: ").lower().strip()
         quantidade = int(input("\n Quantidade: "))
  
-        if titulo in dicLivros: 
-            dicLivros[titulo] += quantidade #adiciona um novo livro ou adiciona a quantidade se o livro já existir
+        if titulo in dicLivros:
+            dicLivros[titulo] += quantidade #incremento de um novo livro ou adiciona a quantidade se o livro já existir
         else:
             dicLivros[titulo] = quantidade
  
         print("Livro adicionado!")
  
-def removeLivro(dicLivros):
+def removeLivro(dicLivros): #declara a função que remove uma quantidade de acordo com o título informado
         print("=== Remover Livro! ===")
-        titulo = input("\n Título: ").lower().strip()
+        titulo = input("\n Título: ").lower().strip() #declara a variável e com lower(deixar todo o texto em minúsculo) e strip(remove os espaços das extremidades)
  
         if titulo not in dicLivros:
                 print("\n O livro não existe no estoque!")
         else:
             quantidade = int(input("\nQuantidade: "))
             if quantidade > dicLivros[titulo]:
-                print("Quantidade insuficiente ") 
+                print("Quantidade insuficiente! ") 
                 print (f"Quantidade disponível :  {dicLivros[titulo]}")
             else:
-                dicLivros[titulo] -= quantidade
+                dicLivros[titulo] -= quantidade # decremento da quantidade de livros
                 print (f"Quantidade atualizada: {dicLivros[titulo]}")  
  
-def consulta(dicLivros):
+def consulta(dicLivros): # Declara a função que busca na lista o título informado pelo usuário
         titulo = input("\n Digite o título do livro: ").lower().strip()
         if titulo in dicLivros:
             print (f"\nLivro: {titulo}")
@@ -36,7 +36,7 @@ def consulta(dicLivros):
         else:
             print("O livro não existe no estoque!")
  
-def listar(dicLivros):
+def listar(dicLivros): # declara a função que lista todos os livros cadastrados
         print("\n === Livros disponíveis ===")
  
         for titulo, quantidade in dicLivros.items():
@@ -44,7 +44,7 @@ def listar(dicLivros):
  
 def main():
  
-    dicLivros = {
+    dicLivros = { #cria o estoque de livros usando um dicioário
             "querido john": 12,
             "a ultima musica": 6,
             "a revoluçao dos bichos": 10,
@@ -65,7 +65,7 @@ def main():
  
         op = input("\n Digite a opção escolhida: ")
  
-        match op:
+        match op: 
              case "1":
                   addLivro(dicLivros)
              case "2":
