@@ -1,11 +1,13 @@
+#Avaliação1
+
 def addLivro(dicLivros):
         print("=== Adicionar livro ===")
  
         titulo = input("\n Título: ").lower().strip()
         quantidade = int(input("\n Quantidade: "))
  
-        if titulo in dicLivros:
-            dicLivros[titulo] += quantidade
+        if titulo in dicLivros: 
+            dicLivros[titulo] += quantidade #adiciona um novo livro ou adiciona a quantidade se o livro já existir
         else:
             dicLivros[titulo] = quantidade
  
@@ -16,12 +18,12 @@ def removeLivro(dicLivros):
         titulo = input("\n Título: ").lower().strip()
  
         if titulo not in dicLivros:
-                print("\n Titulo não encontrado")
+                print("\n O livro não existe no estoque!")
         else:
-            quantidade = int(input("\nQuantidade"))
+            quantidade = int(input("\nQuantidade: "))
             if quantidade > dicLivros[titulo]:
                 print("Quantidade insuficiente ") 
-                print (f"Quantidade disponível {dicLivros[titulo]}")
+                print (f"Quantidade disponível :  {dicLivros[titulo]}")
             else:
                 dicLivros[titulo] -= quantidade
                 print (f"Quantidade atualizada: {dicLivros[titulo]}")  
@@ -29,10 +31,10 @@ def removeLivro(dicLivros):
 def consulta(dicLivros):
         titulo = input("\n Digite o título do livro: ").lower().strip()
         if titulo in dicLivros:
-            print (f"\n Livro: {titulo}")
-            print (f"Quantidade disponível {dicLivros[titulo]}")
+            print (f"\nLivro: {titulo}")
+            print (f"\nQuantidade disponível: {dicLivros[titulo]}")
         else:
-            print("Livro não encontrado!")
+            print("O livro não existe no estoque!")
  
 def listar(dicLivros):
         print("\n === Livros disponíveis ===")
@@ -44,7 +46,11 @@ def main():
  
     dicLivros = {
             "querido john": 12,
-            "a ultima musica": 6
+            "a ultima musica": 6,
+            "a revoluçao dos bichos": 10,
+            "o sol é pra todos": 5,
+            "quem pensa enriquece": 7,
+            "gatilhos mentais": 9
             }
  
     while True:
