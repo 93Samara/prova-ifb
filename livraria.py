@@ -69,7 +69,7 @@ def main():
              case "4":
                   listar(dicLivros)
              case "5":
-                  print("Saindo...")
+                  print("\nSaindo...\n\n\n\n")
                   break
              case _:
                   print("\n Opção inválida")
