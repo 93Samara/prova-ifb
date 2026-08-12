@@ -1,4 +1,5 @@
 #Avaliação1
+# Alunos: Samara P. dos Santos e Igor Barros
 
 def addLivro(dicLivros): #declara a função que adiciona livros no estoque, ou incrementa a quantidade existente
         print("=== Adicionar livro ===")
@@ -81,3 +82,4 @@ def main():
                   print("\n Opção inválida")
  
 main ()
+
